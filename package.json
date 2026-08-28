@@ -1,0 +1,24 @@
+{
+  "name": "avaliacaobackendrestapi",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/gabiipinheiro77/AvaliacaoBackendRestAPI#readme",
+  "bugs": {
+    "url": "https://github.com/gabiipinheiro77/AvaliacaoBackendRestAPI/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabiipinheiro77/AvaliacaoBackendRestAPI.git"
+  },
+  "license": "ISC",
+  "author": "Gabriela Rocha",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
