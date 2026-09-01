@@ -1,3 +1,25 @@
-const AtendimentoRepository = []
+import Atendimento from "../model/atendimento.js"
 
-export default AtendimentoRepository 
+class AtendimentoRepository{
+
+    async Find(_,res){
+        
+       const atendimento = await ServiceAtendimento.findAll()
+       
+       return atendimento
+
+    }
+
+    async Create() {
+
+    }
+
+    async Update(){
+
+    }
+
+    async Delete(){
+
+    }
+}
+export default new AtendimentoRepository()
