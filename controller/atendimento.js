@@ -28,9 +28,9 @@ class ControllerAtendimento {
         }
     }
     //////////////////////////////////
-    Criar(req, res) {
+    Criar(nome, medico, data, hora, valor, pagamento) {
         try {
-            const { id, nome, medico, data, hora, valor, pagamento } = req.body
+            const { nome, medico, data, hora, valor, pagamento } = req.body
 
             ServiceAtendimento.Criar(id, nome, medico, data, hora, valor, pagamento)
 
@@ -44,12 +44,12 @@ class ControllerAtendimento {
         }
     }
     //////////////////////////////////
-    Alterar(req, res) {
+    async Alterar(req, res) {
         try {
             const { nome, medico, data, hora, valor, pagamento } = req.body
             const id = req.params.id
 
-            ServiceAtendimento.Alterar( nome, medico, data, hora, valor, pagamento )
+            await ServiceAtendimento.Alterar( id, nome, medico, data, hora, valor, pagamento )
 
             res.status(201).send({ mensagem:"Alterado com sucesso!"})
         } catch (error) {
@@ -60,15 +60,15 @@ class ControllerAtendimento {
     }
 
     //////////////////////////////////
-    Deletar(req, res) {
+   async Deletar(req, res) {
         try {
-            const id = req.params.id
+            const identificador = req.params.id
 
-            ServiceAtendimento.Deletar(id)
+          await ServiceCarro.Deletar(identificador)
 
-            res.status(204).send({ mensagem:"Deletado!"})
-
+            res.status(204).send({ mensagem: "Deletado" })
         } catch (error) {
+            
             res.status(500).send({
                 mensagem: error.message
             })
